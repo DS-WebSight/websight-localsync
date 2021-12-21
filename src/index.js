@@ -40,7 +40,7 @@ async function stopFsSync() {
     const result = await sendRequest(
         'post',
         `http://localhost:8080/system/console/configMgr/org.apache.sling.fsprovider.internal.FsResourceProvider.${id}`,
-        toFormData({
+        qs.stringify({
             apply: 'true',
             delete: 'true'
         })
